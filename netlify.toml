@@ -1,0 +1,14 @@
+# Configuração de deploy no Netlify para o site estático.
+# Como o site não tem etapa de build (é HTML puro), apenas publicamos a pasta.
+
+[build]
+  publish = "."
+  command = ""
+
+# Cabeçalhos básicos de segurança
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
