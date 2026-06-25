@@ -321,6 +321,16 @@ h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 700; line-height: 
   border: 1px solid rgba(142,154,175,.3); border-radius: var(--radius);
   padding: 10px 18px; font-size: 14px;
 }
+/* Logos de parceiros (cada uma num card branco para uniformizar) */
+.partner-logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-md); max-width: 820px; margin: 0 auto; }
+.partner-logos .pl {
+  background: #fff; border: 1px solid rgba(142,154,175,.3); border-radius: var(--radius-md);
+  height: 120px; display: grid; place-items: center; padding: 20px;
+  transition: transform .2s, box-shadow .2s;
+}
+.partner-logos .pl:hover { transform: translateY(-3px); box-shadow: var(--shadow-medium); }
+.partner-logos .pl img { max-width: 100%; max-height: 78px; object-fit: contain; }
+@media (max-width:560px){ .partner-logos{ grid-template-columns: repeat(2,1fr);} }
 
 /* ===================================================================
    HERO COM IMAGEM (home)
@@ -399,6 +409,25 @@ h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 700; line-height: 
 .article .lead { font-size: 19px; color: var(--navy); }
 
 /* ===================================================================
+   BOTÃO FLUTUANTE DE WHATSAPP (fixo no canto, todas as páginas)
+   =================================================================== */
+.wa-float {
+  position: fixed; right: 22px; bottom: 22px; z-index: 200;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: #25D366; display: grid; place-items: center;
+  box-shadow: 0 6px 22px rgba(0,0,0,.3);
+  transition: transform .2s, box-shadow .2s;
+}
+.wa-float svg { width: 34px; height: 34px; fill: #fff; }
+.wa-float:hover { transform: scale(1.08); box-shadow: 0 10px 28px rgba(37,211,102,.5); }
+.wa-float::after {
+  content: ""; position: absolute; inset: 0; border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(37,211,102,.5); animation: wa-pulse 2.4s infinite;
+}
+@keyframes wa-pulse { 0%{box-shadow:0 0 0 0 rgba(37,211,102,.45);} 70%{box-shadow:0 0 0 16px rgba(37,211,102,0);} 100%{box-shadow:0 0 0 0 rgba(37,211,102,0);} }
+@media (max-width:560px){ .wa-float{ width:54px; height:54px; right:16px; bottom:16px;} .wa-float svg{width:30px;height:30px;} }
+
+/* ===================================================================
    BOTÃO WHATSAPP
    =================================================================== */
 .btn-whatsapp {
@@ -430,6 +459,26 @@ h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 700; line-height: 
 .worktype p { color: var(--gray); font-size: 14px; }
 @media (max-width: 760px) { .worktypes { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px) { .worktypes { grid-template-columns: 1fr; } }
+
+/* Acordeão de segmentos (clique para ver as soluções por tipo de obra) */
+.seg-acc { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-md); align-items: start; }
+.seg { background: var(--white); border: 1px solid rgba(142,154,175,.3); border-radius: var(--radius-md); overflow: hidden; transition: border-color .2s, box-shadow .2s; }
+.seg[open] { border-color: var(--blue); box-shadow: var(--shadow-light); }
+.seg summary {
+  list-style: none; cursor: pointer; padding: 18px var(--sp-lg);
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--font-title); font-weight: 600; font-size: 17px; color: var(--navy);
+}
+.seg summary::-webkit-details-marker { display: none; }
+.seg summary:hover { color: var(--blue); }
+.seg .seg-ico { width: 40px; height: 40px; border-radius: var(--radius); background: rgba(0,210,255,.12); display: grid; place-items: center; flex: 0 0 auto; }
+.seg .seg-ico svg { width: 22px; height: 22px; stroke: var(--blue); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.seg .seg-arrow { margin-left: auto; color: var(--blue); font-size: 24px; line-height: 1; transition: transform .25s; }
+.seg[open] .seg-arrow { transform: rotate(45deg); }
+.seg .seg-body { padding: 0 var(--sp-lg) var(--sp-lg) 70px; }
+.seg .seg-body p { color: var(--gray); font-size: 14px; margin-bottom: 10px; }
+.seg .seg-body ul.check li { font-size: 14px; margin-bottom: 7px; color: #44506a; }
+@media (max-width: 680px) { .seg-acc { grid-template-columns: 1fr; } .seg .seg-body { padding-left: var(--sp-lg); } }
 
 /* ===================================================================
    GRÁFICO (comparativo de orçamento)
