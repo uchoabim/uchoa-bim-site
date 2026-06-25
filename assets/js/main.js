@@ -18,7 +18,7 @@ const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Número de WhatsApp da empresa: 55 (Brasil) + 44 (DDD) + número
-const WHATSAPP_NUMERO = '5544999122326';
+const WHATSAPP_NUMERO = '5544988034897';
 
 // Botão flutuante de WhatsApp (aparece fixo no canto, em todas as páginas)
 (function () {
