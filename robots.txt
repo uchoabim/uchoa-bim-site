@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uchoabim.github.io/uchoa-bim-site/sitemap.xml
