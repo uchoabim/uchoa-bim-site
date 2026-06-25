@@ -6,7 +6,7 @@ Abaixo, do mais fácil ao mais robusto.
 ---
 
 ## ✅ Antes de publicar
-- **Contato:** e-mail, WhatsApp e LinkedIn já preenchidos (uchoabim@gmail.com · (44) 99912-2326 · linkedin.com/uchoa-bim).
+- **Contato:** e-mail, WhatsApp e LinkedIn já preenchidos (uchoabim@gmail.com · (44) 98803-4897 · linkedin.com/uchoa-bim).
 - **Casos** (`casos.html`): troque os exemplos por casos reais quando tiver.
 
 ### Formulário de contato — já funciona, sem cadastro
