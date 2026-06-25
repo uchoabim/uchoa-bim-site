@@ -25,14 +25,12 @@ São 4 passos. Leva uns 5 minutos.
 ---
 
 ## Passo 3 — Enviar o site (copie e cole os comandos)
+Os arquivos já estão **prontos e commitados** — você só precisa conectar e enviar.
 Abra o **Git Bash** (ou o terminal) e cole os comandos abaixo, **um de cada vez**.
-Troque `SEU_USUARIO` pelo seu nome de usuário do GitHub nos dois lugares.
+Troque `SEU_USUARIO` pelo seu nome de usuário do GitHub.
 
 ```bash
 cd "C:/Users/Gustavo Uchoa/OneDrive/Documentos/Engenharia Civil/Empresa/SITE/site"
-
-git add -A
-git commit -m "Adiciona .nojekyll e guia de publicacao"
 
 git remote add origin https://github.com/SEU_USUARIO/uchoa-bim-site.git
 git push -u origin main
