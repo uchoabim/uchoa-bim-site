@@ -83,17 +83,18 @@ h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 700; line-height: 
    =================================================================== */
 .header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(10, 25, 47, .85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(142,154,175,.15);
-  transition: background .3s;
+  background: #0A192F;                 /* navy sólido — nunca fica acinzentado ao rolar */
+  border-bottom: 1px solid rgba(0,210,255,.18);
+  box-shadow: 0 2px 16px rgba(0,0,0,.25);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-.nav-logo img { height: 44px; }
+.nav-logo img { height: 50px; }
 .nav-links { display: flex; gap: var(--sp-xl); align-items: center; }
 .nav-links a { color: var(--gray-soft); font-size: 15px; font-weight: 500; transition: color .2s; }
 .nav-links a:hover { color: var(--blue); }
-.nav-cta { padding: 9px 20px; font-size: 13px; }
+/* CTA do menu: maior especificidade para vencer a cor de .nav-links a */
+.nav-links a.nav-cta { padding: 10px 22px; font-size: 14px; font-weight: 700; color: var(--navy); }
+.nav-links a.nav-cta:hover { color: var(--navy); }
 .nav-toggle { display: none; background: none; border: 0; color: var(--white); font-size: 26px; cursor: pointer; }
 
 /* ===================================================================
@@ -157,10 +158,11 @@ h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 700; line-height: 
 }
 .sol-card:hover { transform: translateY(-4px); border-color: var(--blue); }
 .sol-card .icon {
-  width: 48px; height: 48px; border-radius: var(--radius); margin-bottom: var(--sp-md);
+  width: 52px; height: 52px; border-radius: var(--radius-md); margin-bottom: var(--sp-md);
   background: rgba(0,210,255,.12); display: grid; place-items: center;
-  color: var(--blue); font-size: 24px;
+  color: var(--blue);
 }
+.sol-card .icon svg { width: 28px; height: 28px; stroke: var(--blue); fill: none; }
 .sol-card h3 { font-size: 20px; margin-bottom: var(--sp-sm); }
 .sol-card p { color: var(--gray-soft); font-size: 15px; }
 
@@ -395,3 +397,73 @@ h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 700; line-height: 
 .article p { color: #44506a; font-size: 17px; margin-bottom: var(--sp-md); }
 .article ul.check { margin: var(--sp-md) 0; }
 .article .lead { font-size: 19px; color: var(--navy); }
+
+/* ===================================================================
+   BOTÃO WHATSAPP
+   =================================================================== */
+.btn-whatsapp {
+  background: #25D366; color: #073b22;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.btn-whatsapp svg { width: 20px; height: 20px; fill: #073b22; }
+.btn-whatsapp:hover { background: #1fc05d; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,.4); }
+.cta .btn-whatsapp { color: #073b22; }
+
+/* ===================================================================
+   ÍCONES STROKE (soluções) — garante visual consistente
+   =================================================================== */
+.icon-stroke { stroke: var(--blue); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ===================================================================
+   TIPOS DE OBRA (segmentos atendidos)
+   =================================================================== */
+.worktypes { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-md); }
+.worktype {
+  background: var(--white); border: 1px solid rgba(142,154,175,.3);
+  border-radius: var(--radius-md); padding: var(--sp-lg);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.worktype:hover { transform: translateY(-4px); box-shadow: var(--shadow-medium); border-color: var(--blue); }
+.worktype .wt-ico { width: 44px; height: 44px; border-radius: var(--radius); background: rgba(0,210,255,.12); display: grid; place-items: center; margin-bottom: 12px; }
+.worktype .wt-ico svg { width: 24px; height: 24px; }
+.worktype h3 { font-size: 17px; margin-bottom: 4px; }
+.worktype p { color: var(--gray); font-size: 14px; }
+@media (max-width: 760px) { .worktypes { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .worktypes { grid-template-columns: 1fr; } }
+
+/* ===================================================================
+   GRÁFICO (comparativo de orçamento)
+   =================================================================== */
+.chart-wrap {
+  background: var(--white); border: 1px solid rgba(142,154,175,.3);
+  border-radius: var(--radius-md); padding: var(--sp-xl); box-shadow: var(--shadow-light);
+}
+.chart-wrap.dark { background: var(--navy-soft); border-color: rgba(0,210,255,.25); }
+.chart-note { font-size: 13px; color: var(--gray); margin-top: var(--sp-md); }
+
+/* ===================================================================
+   FAIXA DE DESTAQUE (obras públicas na home)
+   =================================================================== */
+.highlight-band {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(700px 300px at 100% 0%, rgba(0,210,255,.22), transparent 60%),
+    var(--navy);
+  border: 1px solid rgba(0,210,255,.25); border-radius: var(--radius-md);
+  color: var(--white); padding: var(--sp-2xl);
+  display: grid; grid-template-columns: 1.5fr auto; gap: var(--sp-xl); align-items: center;
+}
+.highlight-band::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(142,154,175,.06) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(142,154,175,.06) 1px, transparent 1px);
+  background-size: 40px 40px; pointer-events: none;
+}
+.highlight-band > * { position: relative; }
+.highlight-band h2 { font-size: clamp(24px, 3vw, 32px); margin-bottom: var(--sp-sm); }
+.highlight-band p { color: var(--gray-soft); font-size: 17px; max-width: 620px; }
+.highlight-band .tag-pill { display:inline-block; font-family: var(--font-title); font-size:12px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--cyan); border:1px solid rgba(0,210,255,.4); border-radius:100px; padding:5px 14px; margin-bottom:14px; }
+@media (max-width: 760px) {
+  .highlight-band { grid-template-columns: 1fr; text-align: center; }
+  .highlight-band p { margin: 0 auto; }
+}
