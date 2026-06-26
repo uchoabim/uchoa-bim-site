@@ -13,6 +13,20 @@
   <link rel="icon" type="image/png" href="assets/img/favicon-512.png" />
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
   <link rel="stylesheet" href="assets/css/styles.css?v=2" />
+
+  <!-- Dados estruturados: perguntas frequentes sobre quantitativos BIM -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"O que é levantamento de quantitativos?","acceptedAnswer":{"@type":"Answer","text":"É o cálculo das quantidades de cada serviço e material da obra (áreas, volumes, contagens) que servem de base para o orçamento. No BIM, esses valores são extraídos diretamente dos elementos do modelo."}},
+      {"@type":"Question","name":"Como extrair quantitativos no Revit?","acceptedAnswer":{"@type":"Answer","text":"No Revit, as quantidades são obtidas por tabelas de levantamento (schedules) ligadas aos elementos do modelo, com critérios de medição definidos. Quando o projeto muda, as tabelas se atualizam automaticamente."}},
+      {"@type":"Question","name":"Os quantitativos do BIM são mais precisos que os manuais?","acceptedAnswer":{"@type":"Answer","text":"Sim. Por virem dos elementos do modelo, reduzem omissões e erros do levantamento manual e são rastreáveis: cada quantidade tem origem em um elemento real, facilitando conferência."}},
+      {"@type":"Question","name":"A UCHOA faz levantamento de quantitativos em Maringá?","acceptedAnswer":{"@type":"Answer","text":"Sim. Fazemos levantamento de quantitativos a partir do modelo BIM em Maringá-PR e remotamente para todo o Brasil."}}
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -66,6 +80,33 @@
 
       <h2>O papel da automação</h2>
       <p>Além da extração nativa, rotinas e scripts ajudam a padronizar nomenclaturas, organizar parâmetros e acelerar a conferência. É o que permite escalar o processo sem depender apenas de esforço manual.</p>
+    </div>
+  </section>
+
+  <section class="section problems">
+    <div class="container">
+      <div class="center">
+        <p class="eyebrow">Perguntas frequentes</p>
+        <h2 class="section-title">Dúvidas sobre levantamento de quantitativos</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>O que é levantamento de quantitativos? <span class="q-plus">+</span></summary>
+          <div class="faq-a">É o cálculo das quantidades de cada serviço e material da obra (áreas, volumes, contagens) que servem de base para o orçamento. No BIM, esses valores são extraídos diretamente dos elementos do modelo.</div>
+        </details>
+        <details>
+          <summary>Como extrair quantitativos no Revit? <span class="q-plus">+</span></summary>
+          <div class="faq-a">No Revit, as quantidades são obtidas por tabelas de levantamento (schedules) ligadas aos elementos do modelo, com critérios de medição definidos. Quando o projeto muda, as tabelas se atualizam automaticamente.</div>
+        </details>
+        <details>
+          <summary>Os quantitativos do BIM são mais precisos que os manuais? <span class="q-plus">+</span></summary>
+          <div class="faq-a">Sim. Por virem dos elementos do modelo, reduzem omissões e erros do levantamento manual e são rastreáveis — cada quantidade tem origem em um elemento real, facilitando conferência.</div>
+        </details>
+        <details>
+          <summary>A UCHOA faz levantamento de quantitativos em Maringá? <span class="q-plus">+</span></summary>
+          <div class="faq-a">Sim. Fazemos levantamento de quantitativos a partir do modelo BIM em Maringá-PR e remotamente para todo o Brasil. <a href="contato.html">Fale conosco</a>.</div>
+        </details>
+      </div>
     </div>
   </section>
 
